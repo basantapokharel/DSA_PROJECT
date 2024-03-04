@@ -21,7 +21,7 @@ void drawCell(int x, int y, vector<vector<int>>position) {
 
 for (int i=0;i<position.size();i++)
 {
-    int reqrow=200+position[i][1]*cellSize;
+    int reqrow=250+position[i][1]*cellSize;
     int reqcol=100+position[i][0]*cellSize;
 
     if (x==reqrow && y==reqcol){
@@ -45,7 +45,7 @@ void animation(vector<vector<int>>position)
 {
     for (int i=0;i<position.size();i++)
     {
-        int reqrow=200+position[i][1]*cellSize;
+        int reqrow=250+position[i][1]*cellSize;
         int reqcol=100+position[i][0]*cellSize;
         setfillstyle(SOLID_FILL,WHITE);
         floodfill(reqrow + cellSize / 2, reqcol + cellSize / 2,LIGHTGRAY);
@@ -171,9 +171,6 @@ void ratinamaze(int currrow,int currcol,int visited[][maxcol],string& str,int ar
     return;
 
 
-
-
-
 }
 int main()
 {
@@ -186,42 +183,43 @@ int main()
 
 
 
-row=10;
-col=15;
-int arr[maxrow][maxcol] = {
-    {1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1},
-    {1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1},
-    {1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1},
-    {0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1},
-    {1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1},
-    {1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1},
-    {1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1},
-    {1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1},
-    {1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1},
-    {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
-};
-
-
+//row=10;
+//col=15;
+//int arr[maxrow][maxcol] = {
+//    {1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1},
+//    {1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1},
+//    {1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1},
+//    {0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1},
+//    {1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1},
+//    {1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1},
+//    {1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1},
+//    {1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1},
+//    {1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1},
+//    {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+//};
+//
+//
 
 
 
 //define maze by user itself
-//cout<<"Enter the dimensions of maze"<<endl;
-//cin>>row;
-//cin>>col;
+cout<<"Enter the dimensions of maze"<<endl;
+cin>>row;
+cin>>col;
+int arr[maxrow][maxcol];
 
-//cout<<"Now let's define maze:"<<endl;
-//cout<<"Enter 1 for open path and 0 for block path:"<<endl;
-//for (int i=0;i<row;i++)
-//{
-//
-//    for (int j=0;j<col;j++)
-//    {
-//        int a;
-//        cout<<"arr["<<i<<"]["<<j<<"]:";
-//        cin>>arr[i][j];
-//    }
-//}
+cout<<"Now let's define maze:"<<endl;
+cout<<"Enter 1 for open path and 0 for block path:"<<endl;
+for (int i=0;i<row;i++)
+{
+
+    for (int j=0;j<col;j++)
+    {
+        int a;
+        cout<<"arr["<<i<<"]["<<j<<"]:";
+        cin>>arr[i][j];
+    }
+}
 
 
 
@@ -288,18 +286,12 @@ outtextxy(x,y,"ENTER ANY KEY TO CONTINUE");
 getch();
 cleardevice();
 
-
-
-
-
-
-
     for (int k=0;k<position.size();k++)
     {
 
         for (int i = 0; i < row; ++i) {
         for (int j = 0; j < col; ++j) {
-            int x = 200+j * cellSize;
+            int x = 250+j * cellSize;
             int y = 100+i * cellSize;
             drawCell(x, y, position[k]);
 
